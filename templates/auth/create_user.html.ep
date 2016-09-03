@@ -1,0 +1,28 @@
+% title 'Opret bruger';
+<h1><%= title %></h1>
+
+%= form_for 'create_user_submit' => begin
+    %= csrf_field
+    %= form_group username => begin
+        <label for="username">Kaldenavn:</label>
+        %= text_field username => (class => 'form-control', placeholder => 'Kaldenavn')
+    % end
+    %= form_group realname => begin
+        <label for="realname">Rigtige navn:</label>
+        %= text_field realname => (class => 'form-control', placeholder => 'Rigtige navn')
+    % end
+    %= form_group password => begin
+        <label for="password">Løsen:</label>
+        %= password_field password => (class => 'form-control', placeholder => 'Løsen')
+    % end
+    %= form_group email => begin
+        <label for="email">E-mail:</label>
+        %= text_field email => (class => 'form-control', placeholder => 'E-mail')
+    % end
+    %= form_group phone => begin
+        <label for="phone">Telefon:</label>
+        %= text_field phone => (class => 'form-control', placeholder => 'Telefon')
+    % end
+
+    <button type="submit" class="btn btn-primary">Opret bruger</button>
+% end

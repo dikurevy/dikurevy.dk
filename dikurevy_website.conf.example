@@ -1,0 +1,9 @@
+use Mojo::SQLite;
+{
+    # Database driver. Should be able to use both Mojo::SQLite, Mojo::Pg and Mojo::mysql (Hopefully.)
+    db => Mojo::SQLite->new( 'sqlite:data.db'),
+    # Secret used for signing cookies. Don't make it public.
+    secrets => [ 'flofwlrl42ytl53lgfwldflcffwqrkqeldq' ],
+    # Account where mail is sent to. Make it your own mail in development, and 'boss@dikurevy.dk' in production.
+    admin_mail => 'boss@dikurevy.dk',
+};

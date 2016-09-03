@@ -1,0 +1,2 @@
+% title 'Billetsalg';
+<h1><%= title() %></h1>

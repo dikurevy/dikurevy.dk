@@ -1,0 +1,16 @@
+% title 'Log ind';
+<h1><%= title %></h1>
+
+%= form_for 'login_submit' => begin
+    %= csrf_field
+    %= form_group 'username' => begin
+        <label for="username">Brugernavn:</label>
+        %= text_field username => (class => 'form-control', placeholder => 'Brugernavn')
+    % end
+    %= form_group 'password' => begin
+        <label for="password">Løsen:</label>
+        %= password_field password => (class => 'form-control', placeholder => 'Løsen')
+    % end
+
+    <button type="submit" class="btn btn-primary">Log ind</button>
+% end

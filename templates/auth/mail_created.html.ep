@@ -1,0 +1,10 @@
+% use DIKUrevy::User;
+<p>En bruger har lige oprettet sig på websiden:</p>
+
+<ul>
+% for my $f (qw/id username email realname phone verified admin/) {
+    <li><%= $f %>: <%= $user->$f %></li>
+% }
+</ul>
+
+<p>For at bekræfte brugeren, gå ind på <a href="<%= url_for('admin_user_list') %>"><%= url_for('admin_user_list') %></a>.</p>

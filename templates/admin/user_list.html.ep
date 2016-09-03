@@ -1,0 +1,37 @@
+% title 'Brugere';
+<h1><%= title %></h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Navn</th>
+            <th>Kaldenavn</th>
+            <th>E-mail</th>
+            <th>Telefonnummer</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        % for my $user (@$users) {
+            <tr>
+                <td><%= $user->id %></td>
+                <td><%= $user->realname %></td>
+                <td><%= $user->username %></td>
+                <td><%= $user->email %></td>
+                <td><%= $user->phone %></td>
+                <td>
+                    % unless ($user->verified) {
+                        %= link_to 'Bekræft' => url_for('admin_toggle_verified', id => $user->id)
+                    % }
+                </td>
+                <td>
+                    % if ($user->admin) {
+                        %= t strong => (class => 'text-success') => 'Admin'
+                    % }
+                </td>
+            </tr>
+        % }
+    </tbody>
+</table>
+
