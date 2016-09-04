@@ -1,9 +1,65 @@
-<div class="jumbotron">
-    <div class="container">
+%#<div class="jumbotron">
+%#    <div class="container">
+%#    </div>
+%#</div>
+<div class="row">
+	<div class="col-md-8">
         <h1>DIKUrevy</h1>
         <p>DIKUrevy er en studenterdreven revy skabt af studerende på Datalogisk Institut ved Københavns Universitet. DIKUrevyen afholdes hvert år den sidste lørdag i maj måned. Revyen er skrevet og opført af studerende og har været afholdt årligt siden 1973 og er dermed en af de ældste studenterdrevne revyer i Danmark.</p>
-    </div>
+		<p>
+			DIKUrevyen er en forening som overlever på billetsalg, sponsorater og
+			frivillig arbejdskraft. Indtægterne bruges på at skabe en større og bedre
+			revy, og samtidigt lave arrangementer for de folk som er med til at gøre
+			revyen muligt gennem "hårdt" slid i løbet af hele studieåret.
+		</p>
+
+		<h2>SATYR</h2>
+		<p>
+			DIKUrevyen er en del af SATYR-samarbejdet (Sammenslutningen af Totalt
+			Yderligtgående Revyer) som tæller alle studenterrevyer på det gamle
+			naturvidenskabelige fakultet, dvs. DIKUrevyen Fysikrevyen, MolBioKemrevyen,
+			Matematikrevyen og Biologirevyen. SATYR-samarbejdet styrker fælles know-how
+			og danner grobund for relationer på tværs af fagene, hvilket er med til at
+			skabe større forståelse for ens eget og andres fag.
+		</p>
+	</div>
+	<div class="col-md-4">
+		<h2>Sponsorer</h2>
+<%
+	my @sponsors = (
+		{
+			name => 'Jobindex',
+			logo => 'JobindexLogo.png',
+			url  => 'https://www.jobindex.dk',
+			desc => 'Tak til vores sponsor Jobindex. Danmarks største udvalg af drømmejob: <a href="https://it.jobindex.dk/job/it/">IT-job findes hos Jobindex</a>.',
+		},
+		{
+			name => 'IT-Minds',
+			logo => 'logoitminds.png',
+			url  => 'https://www.it-minds.dk',
+			desc => 'Tak til vores sponsor IT Minds – en arbejdsplads med studerende i fokus. Se mere om at arbejde hos IT Minds <a href="http://www.it-minds.dk/#job/it_minds_som_arbejdsplads">her</a>.',
+		},
+		{
+			name => 'Nine',
+			logo => 'nine_logo_paraply-lille.png',
+			url  => 'https://www.nine.dk',
+			desc => 'Tak til vores sponsor <a href="https://www.nine.dk">Nine</a>. Nine er et højt specialiseret konsulenthus med mere end 75 ansatte med fokus på udvikling af digitale selvbetjeningsløsninger.',
+		},
+	);
+%>
+	% for my $sponsor (@sponsors) {
+		<div class="col-sm-12">
+			<div class="thumbnail">
+				<a href="<%= $sponsor->{url} %>" style="padding: 0 .5em;">
+					<img src="/img/sponsorer/<%= $sponsor->{logo} %>" alt="<%= $sponsor->{name} %>">
+				</a>
+				<div class="caption">
+					<p><%== $sponsor->{desc} %></p>
+				</div>
+			</div>
+		</div>
+	% }
+	</div>
 </div>
 
-<div class="container">
 </div>
