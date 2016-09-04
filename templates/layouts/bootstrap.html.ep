@@ -9,13 +9,6 @@
 
     stash(user => current_user);
     my $user = stash('user');
-
-    if ($user) {
-        push(
-            @menu,
-        );
-    }
-
 %>
 <!DOCTYPE html>
 <html>
