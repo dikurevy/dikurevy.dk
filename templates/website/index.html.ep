@@ -4,7 +4,7 @@
 %#</div>
 <div class="row">
 	<div class="col-md-8">
-        <h1>DIKUrevy</h1>
+        <h2>DIKUrevy</h2>
         <p>DIKUrevy er en studenterdreven revy skabt af studerende på Datalogisk Institut ved Københavns Universitet. DIKUrevyen afholdes hvert år den sidste lørdag i maj måned. Revyen er skrevet og opført af studerende og har været afholdt årligt siden 1973 og er dermed en af de ældste studenterdrevne revyer i Danmark.</p>
 		<p>
 			DIKUrevyen er en forening som overlever på billetsalg, sponsorater og
@@ -24,6 +24,10 @@
 		</p>
 	</div>
 	<div class="col-md-4">
+        <p>
+        <img class="img-responsive center-block" src="/img/logo.svg" alt="DIKUrevy">
+        </p>
+
 		<h2>Sponsorer</h2>
 <%
 	my @sponsors = (
