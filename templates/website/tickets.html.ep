@@ -1,2 +1,4 @@
 % title 'Billetsalg';
 <h1><%= title() %></h1>
+
+<p>Information om billetsalg kommer op noget tid før revyen.</p>
