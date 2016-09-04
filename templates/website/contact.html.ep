@@ -1,3 +1,62 @@
 % title 'Kontakt os';
 <h1><%= title() %></h1>
 
+DIKUrevyen fører forskellige mailinglister, her kan du læse hvilken adresse du skal skrive til alt efter dit formål.
+
+<%
+	my @lists = (
+		{
+			email => 'boss@dikurevy.dk',
+			name  => 'Bosslisten',
+			text  => <<EOF
+	Bedes kontaktes for adminstrative formål, økonomi mv. Hvis du gerne vil være med i revyen (og skrives på en eller følgende lister) mv.<br>
+	Revybosser er: David Rechnagel Udsen (Brainfuck), Nana Girotti, Mikkel Storgaard Knudsen og Kasper Elbo.
+EOF
+		},
+		{
+			email => 'revy@dikurevy.dk',
+			name  => 'DIKUrevyens generelle informationsliste',
+			text  => 'Revyens generelle informationsliste. Mails om arrangementer, samt koordination af revyforløbet foregår herpå.',
+		},
+		{
+			email => 'materiale@dikurevy.dk',
+			name  => 'Materialelisten',
+			text  => 'Skriv til denne adresse hvis du har sketchidéer eller lignende.',
+		},
+		{
+			email => 'band@dikurey.dk',
+			name  => 'Revybandets interne liste',
+			text  => 'Intern mailingliste til koordination for revyens band.',
+		},
+		{
+			email => 'teknik@dikurevy.dk',
+			name  => 'TeXnikkens interne liste',
+			text  => 'Til koordination af TeXnikken i løbet af revyen. Skriv evt. direkte til denne hvis du vil hjælpe med teknik under revyen.'
+		},
+		{
+			email => 'rekvisit@dikurevy.dk',
+			name  => 'Rekvisittens interne liste',
+			text  => 'Tilmeld dig denne liste hvis du er interesseret i at hjælpe med til at bygge rekvisitter i øveugen eller i løbet af året til videooptagelser.',
+		},
+		{
+			email => 'intro@dikurevy.dk',
+			name  => 'Revyintroens interne liste',
+			text  => 'Til alt omhandlende introgruppens videoer; forfatning, planlægning, optagelser og redigering. Skriv direkte til denne hvis du vil hjælpe til med at lave den årlige revyintro.',
+		},
+	);
+%>
+
+<p>
+% for my $list (@lists) {
+<div class="media">
+	%#<div class="media-left">
+	%#</div>
+	<div class="media-body">
+		<h4 class="media-heading"><a href="mailto:<%= $list->{email} %>"><%= $list->{name} %></a></h4>
+		%== $list->{text}
+	</div>
+</div>
+% }
+</p>
+
+<p>Se vores vedtægter her: <a href="/vedtaegter.pdf">http://dikurevy.dk/vedtaegter.pdf</a>.</p>
