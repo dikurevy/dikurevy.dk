@@ -91,6 +91,8 @@ sub startup {
 
     # Secured pages
     $authed->get('/telefonbog')->to('website#phone_dir')->name('phone_dir');
+    $authed->get('/rediger-bruger')->to('auth#edit_user')->name('edit_user');
+    $authed->post('/rediger-bruger')->to('auth#edit_user_submit')->name('edit_user_submit');
 
     # Admin pages
     $admin->get('/')->to('admin#index')->name('admin_index');

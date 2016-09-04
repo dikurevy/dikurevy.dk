@@ -1,0 +1,10 @@
+% title 'Rediger bruger';
+<h1><%= title %></h1>
+
+%= form_for 'edit_user_submit' => begin
+    %= csrf_field
+    %= include 'auth/user_fields'
+
+    <button type="submit" class="btn btn-primary">Rediger bruger</button>
+% end
+

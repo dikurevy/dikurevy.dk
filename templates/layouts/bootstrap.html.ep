@@ -13,9 +13,6 @@
     if ($user) {
         push(
             @menu,
-            { title => 'Telefonbog', route => 'phone_dir' },
-            { title => 'Mødekalender', url => 'http://møder.dikurevy.dk' },
-            ($user->admin ? ({ title => 'Admin', route => 'admin_index' }) : ()),
         );
     }
 
@@ -66,6 +63,17 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 % if (defined $user) {
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Funktioner <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="<%= url_for('phone_dir') %>">Telefonbog</a></li>
+                            <li><a href="http://møder.dikurevy.dk">Mødekalender</a></li>
+                            <li><a href="<%= url_for('edit_user') %>">Rediger bruger</a></li>
+                            % if ($user->admin) {
+                            <li><a href="<%= url_for('admin_index') %>">Admin</a></li>
+                            % }
+                        </ul>
+                    </li>
                     <li><a href="<%= url_for('logout') %>">Log ud</a></li>
                 % } else {
                     <li><a href="<%= url_for('login') %>">Log ind</a></li>
