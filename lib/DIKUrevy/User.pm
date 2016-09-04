@@ -1,5 +1,6 @@
 package DIKUrevy::User;
 use Mojo::Base 'DIKUrevy::DB';
+use utf8;
 
 use Crypt::PBKDF2;
 use Mojo::Util qw/md5_sum secure_compare/;

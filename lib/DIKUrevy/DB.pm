@@ -1,5 +1,6 @@
 package DIKUrevy::DB;
 use Mojo::Base -base;
+use utf8;
 
 my $db;
 has '_db_fields';

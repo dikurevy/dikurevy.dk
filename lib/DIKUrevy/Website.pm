@@ -1,5 +1,6 @@
 package DIKUrevy::Website;
 use Mojo::Base 'Mojolicious';
+use utf8;
 use DIKUrevy::User;
 
 # This method will run once at server start

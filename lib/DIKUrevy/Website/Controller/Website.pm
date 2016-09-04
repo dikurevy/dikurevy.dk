@@ -1,5 +1,6 @@
 package DIKUrevy::Website::Controller::Website;
 use Mojo::Base 'Mojolicious::Controller';
+use utf8;
 
 use DIKUrevy::User;
 

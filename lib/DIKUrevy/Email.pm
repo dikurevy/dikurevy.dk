@@ -1,5 +1,6 @@
 package DIKUrevy::Email;
 use Mojo::Base -base;
+use utf8;
 
 use Email::Stuffer;
 
