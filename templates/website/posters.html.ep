@@ -1,3 +1,39 @@
 % title 'Plakater';
 <h1><%= title() %></h1>
 
+<p>Her kan du se plakater og andet PR-materiale der laves i løbet af året.</p>
+
+<p>Klik på plakaterne for at få dem i højere opløsning.</p>
+
+<%
+    my @years = (
+        {
+            year => '2016',
+            posters => [qw( dramatik-plakat-alt.jpg  git-plakat.jpg  tux-plakat-alt.jpg  vim-plakat.jpg )],
+        },
+        {
+            year => '2015',
+            posters => [qw(
+                afrustning-s51-lille.jpg                frihed-eller-tvang-s83-lille.jpg  plakat3-3.jpg  plakat5.jpg    plakat.png
+                arbejde-og-lysere-tidere-s57-lille.jpg  plakat2.png                       plakat4.jpg    plakat6-2.png  radikalt-til-vaerks-s94-lille.jpg
+            )],
+        },
+        {
+            year => '2014',
+            posters => ['plakat2014-simon-lille.jpg'],
+        },
+    );
+%>
+
+% for my $year (@years) {
+    <h2>Plakater fra <%= $year->{year} %></h2>
+    <div class="row">
+        % for my $poster (@{ $year->{posters} }) {
+            <div class="col-xs-6 col-md-3">
+                <a href="img/plakater/<%= $year->{year} %>/<%= $poster %>" class="thumbnail">
+                    <img src="img/plakater/<%= $year->{year} %>/<%= $poster %>" alt="<%= $poster %>">
+                </a>
+            </div>
+        % }
+    </div>
+% }
