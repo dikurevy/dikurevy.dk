@@ -13,6 +13,9 @@ sub startup {
     $DIKUrevy::DB::db = $self->config('db');
     $self->helper(db => sub { return $DIKUrevy::DB::db });
 
+    # Allow access to cookie from møder.dikurevy.dk
+    $self->sessions->cookie_domain('.dikurevy.dk');
+
     for my $type (qw(message error)) {
         $self->helper("show_$type" => sub {
             my ($self, $msg, %args) = @_;
