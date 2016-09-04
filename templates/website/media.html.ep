@@ -1,3 +1,130 @@
-% title 'Medier';
+% title 'DIKUrevy i medierne';
 <h1><%= title() %></h1>
-
+<%
+my @entries = (
+	{
+		name => 'YouTube',
+		img  => 'youtube.png',
+		text => 'DIKUrevyen er selvfølgelig ung med de unge, nede med de fede og der hvor det hele sker. Vi lægger derfor videoer op på vores egen YouTube-kanal.',
+		url  => 'https://youtube.com/DIKUrevy',
+	},
+	{
+		name => 'Reportage: Dataloger håner Apple og Microsoft i KU-revy',
+		img  => 'jix_logo.png',
+		text => 'Vores sponsor <a href="https://www.jobindex.dk">Jobindex</a> skrev i 2014 denne fine anmeldelse.',
+		url  => 'https://www.jobindex.dk/cms/Reportage-Dataloger-haaner-Apple-og-Microsoft-i-KU-revy',
+		year => '2014',
+	},
+	{
+		name => 'Det Mørke Harlem i øveugen',
+		img  => 'dikutal.png',
+		text => 'Her er en fin lille artikel om videoproduktionen op til revyen fra den hedengangne forening Dikutal.',
+		url  => 'http://dikutal.metanohi.name/artikler/det-m%C3%B8rke-harlem-i-%C3%B8veugen',
+		year => '2013',
+	},
+	{
+		name => 'Revyerne bliver bedre',
+		img  => 'dikutal.png',
+		text => 'Dikutal skrev i 2012 vanen tro en artikel som opvarmning til DIKUrevy 2012.',
+		url  => 'http://dikutal.metanohi.name/artikler/revyerne-bliver-bedre',
+		year => '2012',
+	},
+	{
+		name => 'En aften i kodepoesiens tegn',
+		img  => 'uniavisen.jpg',
+		text => 'Samme år gæstede Universitetsavisen generalprøven og skrevet følgende anmeldelse.',
+		url  => 'http://universitetsavisen.dk/campus/en-aften-i-kodepoesiens-tegn',
+		year => '2012',
+	},
+	{
+		name => 'DIKU-revy 2012',
+		img  => 'torben_mogensen.jpg',
+		text => 'Derudover har Torben Mogensen også skrevet en anmeldelse på sin blog på Version2.',
+		url  => 'https://www.version2.dk/blog/diku-revy-2012-45656',
+		year => '2012',
+	},
+	{
+		name => 'Mænd i tyl vinder de gyldne damers gunst',
+		img  => 'uniavisen.jpg',
+		text => 'Universitetsavisens anmeldelse af DIKUrevy 2011 kan læses her.',
+		url  => 'http://universitetsavisen.dk/campus/maend-i-tyl-vinder-de-gyldne-damers-gunst',
+		year => '2011',
+	},
+	{
+		name => 'Bagom øveugen',
+		img  => 'dikutal.png',
+		text => 'Dikutal lavede i 2011 en reportage i øveugen op til revyen.',
+		year => '2011',
+		sub => [
+			{
+				name => 'Mandag i øveugen',
+				url  => 'http://dikutal.metanohi.name/artikler/bagom-dikurevyen-mandag-i-%C3%B8veugen',
+				text => 'Første del af reportagen.',
+				img  => 'dikutal.png',
+			},
+			{
+				name => 'Onsdag i øveugen',
+				url  => 'http://dikutal.metanohi.name/artikler/bagom-dikurevyen-onsdag-i-%C3%B8veugen',
+				text => 'Anden del af reportagen.',
+				img  => 'dikutal.png',
+			},
+			{
+				name => 'Oberstprøve og premiereaften',
+				url  => 'http://dikutal.metanohi.name/artikler/bagom-dikurevyen-oberstpr%C3%B8ve-og-premiereaften',
+				text => 'Tredje og sidste del af reportagen.',
+				img  => 'dikutal.png',
+			},
+		],
+	},
+	{
+		name => 'Video: Version2-blogger optræder som ubådskaptajn',
+		img  => 'version2.gif',
+		text => 'Version2 skrev om vores <a href="https://www.youtube.com/watch?v=s_x9UzrXTqE">Torben Mogensen collection</a>.',
+		url  => 'https://www.version2.dk/artikel/video-version2-blogger-optraeder-som-ubaadskaptajn-19418',
+		year => '2011',
+	},
+	{
+		name => 'Anmeldelse af DIKU revy 2011',
+		img  => 'DIKU_logo.png',
+		text => 'Postdoc Jesper Andersen skrev i 2011 denne anmeldelse af revyen.',
+		url  => 'http://diku.dk/Nyheder/2011/anmeldelse_diku_revy/',
+		year => '2011',
+	},
+	{
+		name => 'Poul-Henning gav den gas i DIKU-revyen',
+		img  => 'version2.gif',
+		text => 'Version2 skrev i 2009 en anmeldelse af revyen.',
+		url  => 'https://www.version2.dk/blog/poul-henning-gav-den-gas-i-diku-revyen-11133',
+		year => '2009',
+	},
+);
+%>
+% my $render_entry;
+% $render_entry = begin
+	% my $entry = shift;
+	% my $link_start = $entry->{url} ? '<a href="' . $entry->{url} . '">' : '';
+	% my $link_end = $entry->{url} ? '</a>' : '';
+<div class="media">
+  <div class="media-left">
+	%== $link_start
+      <img class="media-object" src="img/medier/<%= $entry->{img} %>" alt="<%= $entry->{name} %>" style="width: 64px; height: 64px">
+	%== $link_end
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">
+		%== $link_start
+			<%= $entry->{year} ? $entry->{year} . ": " : '' %><%= $entry->{name} %>
+		%== $link_end
+	</h4>
+	<p>
+		<%== $entry->{text} %>
+		% for my $sub_entry (@{ $entry->{sub} // [] }) {
+			%== $render_entry->($sub_entry)
+		% }
+	</p>
+  </div>
+</div>
+% end
+% for my $entry (@entries) {
+	%== $render_entry->($entry)
+% }
