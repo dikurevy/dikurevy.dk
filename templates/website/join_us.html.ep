@@ -1,3 +1,35 @@
 % title 'Vær med!';
 <h1><%= title() %></h1>
 
+<p>
+Alle kan deltage i processen med at skabe DIKUrevyen. Der er igennem hele
+året brug for en masse hænder til at skrive materiale og hygge, og det er
+især vigtigt at vi er en masse i maj hvor revyen løber af stablen.
+</p>
+
+<p>
+Vi holder flere revy-arrangementer i løbet af året. Hvis du vil være med, er du mere end velkommen!
+</p>
+
+<p>
+Her er en kort oversigt over hvilke arbejdsopgaver der er i løbet af året og under revyen:
+</p>
+
+<ul>
+<li>Materialeskrivning</li>
+<li>Skuespil</li>
+<li>Sang</li>
+<li>Dans</li>
+<li>Rekvisitter</li>
+<li>Fest</li>
+<li>Teknikken (lyd, lys og AV)</li>
+<li>Spotføring</li>
+<li>Band</li>
+<li>Sminke</li>
+<li>PR</li>
+<li>Hygge!!!</li>
+</ul>
+
+<p>
+Kom og leg med!
+</p>
