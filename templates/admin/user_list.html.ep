@@ -22,7 +22,7 @@
                 <td><%= $user->phone %></td>
                 <td>
                     % unless ($user->verified) {
-                        %= link_to 'Bekræft' => url_for('admin_toggle_verified', id => $user->id)
+                        %= link_to 'Bekræft' => url_for('admin_toggle_verified', userid => $user->id)
                     % }
                 </td>
                 <td>
