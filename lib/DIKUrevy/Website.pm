@@ -14,7 +14,7 @@ sub startup {
     $self->helper(db => sub { return $DIKUrevy::DB::db });
 
     # Allow access to cookie from møder.dikurevy.dk
-    $self->sessions->cookie_domain('.dikurevy.dk');
+    $self->sessions->cookie_domain('.dikurevy.dk') if $self->mode eq 'production';
 
     for my $type (qw(message error)) {
         $self->helper("show_$type" => sub {
