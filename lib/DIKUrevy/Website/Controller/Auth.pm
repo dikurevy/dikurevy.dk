@@ -70,6 +70,7 @@ sub create_user_submit {
     }
 
     $user = DIKUrevy::User->new( %{ $v->output } );
+    $user->set_password($self->param('password'));
     $user->save;
 
     my $mail = $self->render_to_string(template => 'auth/mail_created', user => $user, layout => undef)->to_string;
