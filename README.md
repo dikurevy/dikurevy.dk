@@ -31,3 +31,10 @@ For at opdatere koden på dikurevy.dk:
 ### Vil du oprette nye sider?
 * `lib/DIKUrevy/Website.pm` indeholder bl.a. opsætningen af ruter (hvad der skal håndtere en given URL).
 * `lib/DIKUrevy/Website/Controllers/` indeholder controllers'ne der håndterer renderingen af ruterne.
+
+## Nyttig dokumentation
+
+* Mojolicious-dokumentation:
+    - [Oversigt](http://mojolicious.org/perldoc)
+    - [Templates](http://mojolicious.org/perldoc/Mojo/Template)
+    - [Tag helpers (til templates)](http://mojolicious.org/perldoc/Mojolicious/Plugin/TagHelpers)
