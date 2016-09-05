@@ -17,10 +17,11 @@
 		<p>
 			DIKUrevyen er en del af SATYR-samarbejdet (Sammenslutningen af Totalt
 			Yderligtgående Revyer) som tæller alle studenterrevyer på det gamle
-			naturvidenskabelige fakultet, dvs. DIKUrevyen Fysikrevyen, MolBioKemrevyen,
+			naturvidenskabelige fakultet, dvs. DIKUrevyen, Fysikrevyen, MolBioKemrevyen,
 			Matematikrevyen og Biologirevyen. SATYR-samarbejdet styrker fælles know-how
 			og danner grobund for relationer på tværs af fagene, hvilket er med til at
-			skabe større forståelse for ens eget og andres fag.
+			skabe større forståelse for ens eget og andres fag.  Se også
+            <a href="http://satyr.dk/">satyr.dk</a>.
 		</p>
 	</div>
 	<div class="col-md-4">
@@ -42,7 +43,7 @@
 			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=13646742463";
 			fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));</script>
-			<div class="fb-page" data-href="https://www.facebook.com/dikurevy" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/dikurevy" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/dikurevy">DIKUrevy</a></blockquote></div>
+			<div class="fb-page" data-href="https://www.facebook.com/dikurevy" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/dikurevy" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/dikurevy">DIKUrevy på Facebook</a></blockquote></div>
 		</p>
 
 		<h2>Sponsorer</h2>

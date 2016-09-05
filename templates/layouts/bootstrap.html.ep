@@ -30,6 +30,10 @@
 
     <style>
         body { padding-top: 70px; }
+
+        #funktioner:hover ul {
+          display: block;
+        }
     </style>
   </head>
   <body>
@@ -56,7 +60,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 % if (defined $user) {
-                    <li class="dropdown">
+                    <li class="dropdown" id="funktioner">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Funktioner <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="<%= url_for('phone_dir') %>">Telefonbog</a></li>
