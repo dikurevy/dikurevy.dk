@@ -7,4 +7,5 @@
 % }
 </ul>
 
-<p>For at bekræfte brugeren, gå ind på <a href="<%= url_for('admin_user_list') %>"><%= url_for('admin_user_list') %></a>.</p>
+% my $admin_url = url_for('admin_user_list')->to_abs;
+<p>For at bekræfte brugeren, gå ind på <a href="<%= $admin_url %>"><%= $admin_url %></a>.</p>
