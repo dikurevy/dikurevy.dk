@@ -8,11 +8,14 @@ sub send_mail {
     my $self = shift;
     my %args = @_;
 
-    Email::Stuffer->to($args{to})
-                  ->from('DIKUrevy-webside-botten <website@dikurevy.dk>')
-                  ->html_body($args{body})
-                  ->subject($args{subject})
-                  ->send;
+    my $email = Email::Stuffer->to($args{to})
+                              ->from('DIKUrevy-webside-botten <website@dikurevy.dk>')
+                              ->html_body($args{body})
+                              ->subject($args{subject});
+
+    $email = $email->header('Reply-To', $args{reply_to}) if ($args{reply_to});
+
+    $email->send;
 }
 
 
