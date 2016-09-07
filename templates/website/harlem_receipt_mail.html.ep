@@ -1,0 +1,11 @@
+<p>Hej <%= $full_name %></p>
+<p>Dette er en automatisk genereret kvittering på din anmodning om adgang til Harlem.</p>
+<p>Følgende mail er blevet sendt til <a href="mailto:boss@dikurevy.dk">boss@dikurevy.dk</a>:</p>
+
+<blockquote style="margin-left: 1em; border-left: 3px solid #77B5C9; padding-left: 0.5em;">
+    %== $admin_mail
+</blockquote>
+
+<p>Hvis du har spørgsmål til processen, kontakt gerne <a href="mailto:boss@dikurevy.dk">boss@dikurevy.dk</a></p>
+
+<p>Hilsen<br>DIKUrevy.dk-robotten</p>

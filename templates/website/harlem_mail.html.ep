@@ -1,0 +1,14 @@
+<p>Hej bosser</p>
+
+<p><%= $full_name %> vil gerne anmode om adgang til Harlem:</p>
+
+<ul>
+<li><strong>Fulde navn:</strong> <%= $full_name %></li>
+<li><strong>E-mail:</strong> <%= $email %></li>
+<li><strong>Nummer på studiekort:</strong> <%= $card_no %></li>
+<li><strong>Slutdato for adgang (yyyy-mm-dd):</strong> <%= $end_date %></li>
+<li><strong>Hvorfor skal du bruge adgang?</strong><br><pre><%= $reason %></pre></li>
+</ul>
+
+<p>Hilsen<br>
+dikurevy.dk-robotten</p>

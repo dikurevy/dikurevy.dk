@@ -4,6 +4,7 @@
         { title => 'Medier',     route => 'media' },
         { title => 'Plakater',   route => 'posters' },
         { title => 'Vær med!',   route => 'join_us' },
+        { title => 'Harlem',     route => 'harlem' },
         { title => 'Kontakt os', route => 'contact' },
     );
 

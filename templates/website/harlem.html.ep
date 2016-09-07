@@ -1,0 +1,63 @@
+% title 'Adgang til Harlem';
+%= t h1 => title
+
+<p>
+I forbindelse med revyerne sker det tit, at folk har behov for at kunne komme
+ind i Harlem i DIKUs kælder. Hvis du har behov for adgang, kan du udfylde
+følgende formular, og bossgruppen vil vende tilbage til dig:
+</p>
+
+%= form_for 'harlem_submit' => (class => "form-horizontal") => begin
+    %= csrf_field
+    %= form_group full_name => begin
+        <label for="full_name" class="col-sm-3 control-label">Dit fulde navn</label>
+        <div class="col-sm-9">
+            %= text_field full_name => (class => 'form-control', placeholder => 'Søren Cykelstativ den Fjerde')
+        </div>
+    % end
+    %= form_group email => begin
+        <label for="email" class="col-sm-3 control-label">E-mail</label>
+        <div class="col-sm-9">
+            %= text_field email => (class => 'form-control', placeholder => 'søren4@cykler.nørreport.dk')
+        </div>
+    % end
+    %= form_group card_no => begin
+        <label for="card_no" class="col-sm-3 control-label">Nummer på studiekort</label>
+        <div class="col-sm-9">
+            %= text_field card_no => (class => 'form-control', placeholder => '12-34-567890')
+            <span class="help-block">
+                Nummeret på dit studiekort eller gæstekort (som skal være aktivt og gyldigt!)
+            </span>
+        </div>
+    % end
+    %= form_group end_date => begin
+        <label for="end_date" class="col-sm-3 control-label">Slutdato for adgang</label>
+        <div class="col-sm-9">
+            %= text_field end_date => (class => 'form-control', placeholder => 'yyyy-mm-dd')
+            <span class="help-block">
+                Hvilken dato du har behov for adgang til - dvs. hvor længe du regner med at have behov for adgangen.<br>Hvis du har gæstekort kan dette maksimalt være 3 måneder.
+            </span>
+        </div>
+    % end
+    %= form_group reason => begin
+        <label for="reason" class="col-sm-3 control-label">Hvorfor skal du bruge adgang?</label>
+        <div class="col-sm-9">
+            %= text_area 'reason' => (class => 'form-control', placeholder => 'Min moster er syg, og de har ikke plads på hospitalet, så hun vil gerne kunne sove i Harlem.', rows => 6)
+            <span class="help-block">
+                Hvorfor du har behov for adgangen - er du SaTyR-boss? Med i Biorevyens band? TeXniker i Matematikrevyen? Skriv det her, så vi kan vurdere om du slipper ind!
+            </span>
+        </div>
+    % end
+    <p>
+    %= submit_button 'Indsend' => (class => 'btn btn-primary col-sm-offset-3')
+    </p>
+% end
+
+<p>
+Vær opmærksom på at adgangen kræver at vi kontakter administrationen,
+og adgangen aktiveres så dagen efter, omkring frokost, når systemerne
+opdateres. Det kan derfor godt tage et par hverdage at skaffe adgang, så lad
+være med at vente til sidste øjeblik :)
+</p>
+
+<p>Hvis du oplever problemer, eller har spørgsmål til processen, kontakt da gerne <a href="mailto:boss@dikurevy.dk">boss@dikurevy.dk</p>.</p>

@@ -85,6 +85,8 @@ sub startup {
     $r->get('/plakater')->to('website#posters')->name('posters');
     $r->get('/vaer-med')->to('website#join_us')->name('join_us');
     $r->get('/kontakt')->to('website#contact')->name('contact');
+    $r->get('/harlem')->to('website#harlem')->name('harlem');
+    $r->post('/harlem')->to('website#harlem_submit')->name('harlem_submit');
 
     # Login/logout pages
     $r->get('/log-ind')->to('auth#login')->name('login');
