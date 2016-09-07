@@ -20,8 +20,8 @@ sub startup {
         $self->helper("show_$type" => sub {
             my ($self, $msg, %args) = @_;
             my $loc = $args{flash} ? 'flash' : 'stash';
-            my $messages = $self->$loc('messages') // [];
-            $self->$loc('messages', [ @$messages, $msg ]);
+            my $messages = $self->$loc($type.'s') // [];
+            $self->$loc($type.'s', [ @$messages, $msg ]);
         });
     }
 
