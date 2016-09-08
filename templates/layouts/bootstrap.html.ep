@@ -1,6 +1,6 @@
 <%
     my @menu = (
-        { title => 'Billetsalg', route => 'tickets' },
+#        { title => 'Billetsalg', route => 'tickets' },
         { title => 'Medier',     route => 'media' },
         { title => 'Plakater',   route => 'posters' },
         { title => 'Vær med!',   route => 'join_us' },
