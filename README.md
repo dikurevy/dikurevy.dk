@@ -34,7 +34,11 @@ For at opdatere koden på dikurevy.dk:
 
 ## Nyttig dokumentation
 
-* Mojolicious-dokumentation:
+* Mojolicious-dokumentation: (Backend-web-framework'et)
     - [Oversigt](http://mojolicious.org/perldoc)
     - [Templates](http://mojolicious.org/perldoc/Mojo/Template)
     - [Tag helpers (til templates)](http://mojolicious.org/perldoc/Mojolicious/Plugin/TagHelpers)
+
+* Bootstrap-dokumentation: (Frontend-CSS-framework'et)
+    - [CSS](https://getbootstrap.com/css/)
+    - [Components](https://getbootstrap.com/components/)
