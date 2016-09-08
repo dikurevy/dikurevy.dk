@@ -1,6 +1,6 @@
 <%
     my @menu = (
-#        { title => 'Billetsalg', route => 'tickets' },
+        { title => 'Billetsalg', route => 'tickets' },
         { title => 'Medier',     route => 'media' },
         { title => 'Plakater',   route => 'posters' },
         { title => 'Vær med!',   route => 'join_us' },
@@ -29,17 +29,15 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-        body { padding-top: 70px; }
-
+    <style language="text/css">
         #funktioner:hover ul {
           display: block;
         }
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+    <nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
