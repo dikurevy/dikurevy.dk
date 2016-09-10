@@ -61,3 +61,17 @@ være med at vente til sidste øjeblik :)
 </p>
 
 <p>Hvis du oplever problemer, eller har spørgsmål til processen, kontakt da gerne <a href="mailto:boss@dikurevy.dk">boss@dikurevy.dk</p>.</p>
+
+<!-- Bootstrap datepicker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.min.css" integrity="sha256-nFp4rgCvFsMQweFQwabbKfjrBwlaebbLkE29VFR0K40=" crossorigin="anonymous" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js" integrity="sha256-urCxMaTtyuE8UK5XeVYuQbm/MhnXflqZ/B9AOkyTguo=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.da.min.js" integrity="sha256-6onibvuaAjjoiFU8ezvMA8u6f2tV6GWqLwKmQQpywus=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('input[name=end_date]').datepicker({
+            format: 'yyyy-mm-dd',
+            language: 'da',
+            weekStart: 1
+        });
+    } );
+</script>
