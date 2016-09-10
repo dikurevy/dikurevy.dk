@@ -8,6 +8,13 @@ my @entries = (
 		text => 'DIKUrevyen er selvfølgelig ung med de unge, nede med de fede og der hvor det hele sker. Vi lægger derfor videoer op på vores egen YouTube-kanal.',
 		url  => 'https://youtube.com/DIKUrevy',
 	},
+    {
+        name => 'Tak for endnu et uforligneligt brag af en fest, DIKUrevy',
+        img  => 'DIKU_logo.png',
+        text => 'DIKU skrev i 2015 en lille nyhed om årets revy.',
+        url  => 'http://diku.dk/Nyheder/2015/dikurevy2015/',
+        year => '2015',
+    },
 	{
 		name => 'Reportage: Dataloger håner Apple og Microsoft i KU-revy',
 		img  => 'jix_logo.png',
