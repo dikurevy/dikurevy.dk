@@ -5,6 +5,10 @@ use utf8;
 use DIKUrevy::Email;
 
 use Mojo::Template;
+use Mojo::JWT;
+
+
+our $_email_match = qr/^.*\@.*$/;
 
 sub login {
     my $self = shift;
@@ -48,7 +52,7 @@ sub _user_validator {
 
     my $v = $self->validation;
     $v->required($_) for qw/username password realname phone/;
-    $v->required('email')->like(qr/^.*\@.*$/);
+    $v->required('email')->like($_email_match);
 
     return $v;
 }
@@ -81,6 +85,77 @@ sub create_user_submit {
     );
 
     $self->show_message('Din bruger er oprettet, men skal først bekræftes af revybosserne. Når dette er sket vil du få en mail.', flash => 1);
+    return $self->redirect_to('frontpage');
+}
+
+sub random_password() {
+    my @chars = ('A'..'Z', 'a'..'z', '0'..'9', '@%$#&+*');
+    return join('', map { $chars[rand @chars] } 1..16);
+}
+
+sub new_password {
+    my $self = shift;
+
+    my $jwt = $self->req->query_params->param('jwt');
+    if ($jwt) {
+        my $secret = $self->config('secrets')->[0];
+        my $claims;
+        eval { $claims = Mojo::JWT->new(secret => $secret)->decode($jwt); };
+        if ((! $claims) || (time() > $claims->{'exp'})) {
+            $self->show_error('Ugyldigt løsen-link.', flash => 1);
+            return $self->redirect_to('frontpage');
+        }
+        else {
+            my $user = DIKUrevy::User->retrieve( { id => $claims->{'id'} } );
+            my $new_password = random_password();
+            $user->set_password($new_password);
+            $user->save;
+            $self->show_message('Du kan nu logge ind med dit nye løsen: '
+                                . $new_password,
+                                flash => 1);
+            return $self->redirect_to('frontpage');
+        }
+    }
+    else {
+        return $self->render('auth/new_password');
+    }
+}
+
+sub new_password_submit {
+    my $self = shift;
+
+    my $v = $self->validation;
+    $v->required('email_address')->like($_email_match);
+
+    if ($v->has_error || $v->csrf_protect->has_error('csrf_token')) {
+        $self->show_error('Udfyld email-adresse.');
+        return $self->new_password();
+    }
+
+    my $users = DIKUrevy::User->fetch( { email => $v->output->{email_address} } );
+    if (@$users == 1) {
+        my $user = $users->[0];
+        my $user_id = $user->{'id'};
+        my $secret = $self->config('secrets')->[0];
+        my $in_one_hour = time() + 60 * 60;
+        my $jwt = Mojo::JWT->new(secret => $secret,
+                                 expires => $in_one_hour,
+                                 claims => {id => $user_id})->encode;
+
+        my $mail = $self->render_to_string(template => 'auth/new_password_email',
+                                           jwt => $jwt,
+                                           layout => undef)->to_string;
+        DIKUrevy::Email->send_mail(
+            to      => $v->output->{email_address},
+            subject => "Få et nyt løsen til dikurevy.dk",
+            body    => $mail,
+            );
+    }
+
+    # Show this message even if the email address is invalid, to defend against
+    # targeted data extraction.
+    $self->show_message('Vi har sendt dig instruktioner til at lave et nyt løsen.',
+                        flash => 1);
     return $self->redirect_to('frontpage');
 }
 
@@ -117,4 +192,3 @@ sub edit_user_submit {
 }
 
 1;
-

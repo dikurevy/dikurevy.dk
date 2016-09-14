@@ -5,7 +5,7 @@
 For at køre siden i udvikling:
 
     # Installér afhængigheder
-    sudo cpan -i Mojolicious Mojolicious::Plugin::Authentication Email::Stuffer Crypt::PBKDF2 Mojo::SQLite
+    sudo cpan -i Mojolicious Mojolicious::Plugin::Authentication Email::Stuffer Crypt::PBKDF2 Mojo::SQLite Mojo::JWT
 
     # Tilpas konfigurationsfilen
     cp dikurevy_website.conf.example dikurevy_website.conf
