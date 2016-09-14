@@ -73,6 +73,12 @@ sub create_user_submit {
         return $self->create_user();
     }
 
+    my $user = DIKUrevy::User->retrieve( { email => $v->output->{email} } );
+    if ($user) {
+        $self->show_error('Emailadressen er allerede taget.');
+        return $self->create_user();
+    }
+
     $user = DIKUrevy::User->new( %{ $v->output } );
     $user->set_password($self->param('password'));
     $user->save;
