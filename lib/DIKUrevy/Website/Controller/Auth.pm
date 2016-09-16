@@ -1,6 +1,7 @@
 package DIKUrevy::Website::Controller::Auth;
 use Mojo::Base 'Mojolicious::Controller';
 use utf8;
+use Try::Tiny;
 
 use DIKUrevy::Email;
 
@@ -8,7 +9,7 @@ use Mojo::Template;
 use Mojo::JWT;
 
 
-our $_email_match = qr/^.*\@.*$/;
+my $_email_match = qr/^.*\@.*$/;
 
 sub login {
     my $self = shift;
@@ -73,7 +74,7 @@ sub create_user_submit {
         return $self->create_user();
     }
 
-    my $user = DIKUrevy::User->retrieve( { email => $v->output->{email} } );
+    $user = DIKUrevy::User->retrieve( { email => $v->output->{email} } );
     if ($user) {
         $self->show_error('Emailadressen er allerede taget.');
         return $self->create_user();
@@ -86,7 +87,7 @@ sub create_user_submit {
     my $mail = $self->render_to_string(template => 'auth/mail_created', user => $user, layout => undef)->to_string;
     DIKUrevy::Email->send_mail(
         to      => $self->config('admin_mail'),
-        subject => "Ny bruger oprettet på websiden: " . $user->username,
+        subject => 'Ny bruger oprettet på websiden: ' . $user->username,
         body    => $mail,
     );
 
@@ -94,37 +95,10 @@ sub create_user_submit {
     return $self->redirect_to('frontpage');
 }
 
-sub random_password() {
-    my @chars = ('A'..'Z', 'a'..'z', '0'..'9', '@%$#&+*');
-    return join('', map { $chars[rand @chars] } 1..16);
-}
-
 sub new_password {
     my $self = shift;
 
-    my $jwt = $self->req->query_params->param('jwt');
-    if ($jwt) {
-        my $secret = $self->config('secrets')->[0];
-        my $claims;
-        eval { $claims = Mojo::JWT->new(secret => $secret)->decode($jwt); };
-        if ((! $claims) || (time() > $claims->{'exp'})) {
-            $self->show_error('Ugyldigt løsen-link.', flash => 1);
-            return $self->redirect_to('frontpage');
-        }
-        else {
-            my $user = DIKUrevy::User->retrieve( { id => $claims->{'id'} } );
-            my $new_password = random_password();
-            $user->set_password($new_password);
-            $user->save;
-            $self->show_message('Du kan nu logge ind med dit nye løsen: '
-                                . $new_password,
-                                flash => 1);
-            return $self->redirect_to('frontpage');
-        }
-    }
-    else {
-        return $self->render('auth/new_password');
-    }
+    return $self->render('auth/new_password');
 }
 
 sub new_password_submit {
@@ -138,22 +112,20 @@ sub new_password_submit {
         return $self->new_password();
     }
 
-    my $users = DIKUrevy::User->fetch( { email => $v->output->{email_address} } );
-    if (@$users == 1) {
-        my $user = $users->[0];
-        my $user_id = $user->{'id'};
+    my $user = DIKUrevy::User->retrieve( { email => $v->output->{email_address} } );
+    if ($user) {
         my $secret = $self->config('secrets')->[0];
-        my $in_one_hour = time() + 60 * 60;
+        my $in_one_day = time() + 60 * 60 * 24;
         my $jwt = Mojo::JWT->new(secret => $secret,
-                                 expires => $in_one_hour,
-                                 claims => {id => $user_id})->encode;
+                                 expires => $in_one_day,
+                                 claims => {id => $user->id})->encode;
 
         my $mail = $self->render_to_string(template => 'auth/new_password_email',
                                            jwt => $jwt,
                                            layout => undef)->to_string;
         DIKUrevy::Email->send_mail(
             to      => $v->output->{email_address},
-            subject => "Få et nyt løsen til dikurevy.dk",
+            subject => "Nyt løsen til dikurevy.dk",
             body    => $mail,
             );
     }
@@ -163,6 +135,29 @@ sub new_password_submit {
     $self->show_message('Vi har sendt dig instruktioner til at lave et nyt løsen.',
                         flash => 1);
     return $self->redirect_to('frontpage');
+}
+
+sub login_with_token {
+    my $self = shift;
+
+    my $jwt = $self->req->query_params->param('jwt');
+    if ($jwt) {
+        my $secret = $self->config('secrets')->[0];
+        my $claims;
+        try {
+            $claims = Mojo::JWT->new(secret => $secret)->decode($jwt);
+            $self->authenticate(undef, undef, { auto_validate => $claims->{id} });
+            $self->show_message('Du er nu logget ind og kan sætte dit nye løsen.',
+                                flash => 1);
+            $self->redirect_to('edit_user')
+        } catch {
+            $self->show_error('Ugyldigt løsen-link.', flash => 1);
+            return $self->redirect_to('frontpage');
+        }
+    }
+    else {
+        return $self->redirect_to('frontpage');
+    }
 }
 
 sub edit_user {

@@ -94,8 +94,9 @@ sub startup {
     $r->get('/log-ud')->to('auth#logout')->name('logout');
     $r->get('/opret-bruger')->to('auth#create_user')->name('create_user');
     $r->post('/opret-bruger')->to('auth#create_user_submit')->name('create_user_submit');
-    $r->get('/nyt-løsen')->to('auth#new_password')->name('new_password');
-    $r->post('/nyt-løsen')->to('auth#new_password_submit')->name('new_password_submit');
+    $r->get('/nyt-loesen')->to('auth#new_password')->name('new_password');
+    $r->post('/nyt-loesen')->to('auth#new_password_submit')->name('new_password_submit');
+    $r->get('/hop-ind')->to('auth#login_with_token')->name('login_with_token');
 
     # Secured pages
     $authed->get('/telefonbog')->to('website#phone_dir')->name('phone_dir');
