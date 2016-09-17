@@ -153,7 +153,7 @@ sub login_with_token {
         } catch {
             $self->show_error('Ugyldigt løsen-link.', flash => 1);
             return $self->redirect_to('frontpage');
-        }
+        };
     }
     else {
         return $self->redirect_to('frontpage');
