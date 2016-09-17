@@ -47,6 +47,7 @@ sub set_password {
 
     my $pbkdf2 = Crypt::PBKDF2->new();
     $self->password( $pbkdf2->generate( $password ) );
+    $self->password_legacy(undef);
     return $self;
 }
 

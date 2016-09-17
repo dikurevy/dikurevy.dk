@@ -14,3 +14,7 @@
 
     <button type="submit" class="btn btn-primary">Log ind</button>
 % end
+
+<p class="text-right">
+%= link_to 'Har du glemt dit løsen?' => url_for('new_password')
+</p>
