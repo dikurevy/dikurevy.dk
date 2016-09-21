@@ -1,0 +1,17 @@
+<p>Hej</p>
+
+<p>
+  Du har bedt om at få mulighed for at lave et nyt løsen til en konto på
+  dikurevy.dk forbundet med denne email-adresse, men en sådan konto findes
+  ikke. Har du måske oprettet din bruger med en anden email-adresse?
+</p>
+
+% my $action_url = url_for('create_user')->to_abs;
+<p>
+  Du kan gå ind på <a href="<%= $action_url %>"><%= $action_url %></a> for at
+  oprette en ny bruger.
+</p>
+
+<p>
+  Venlig hilsen DIKUrevyens hjemmeside
+</p>
