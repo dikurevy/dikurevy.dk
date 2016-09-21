@@ -129,9 +129,16 @@ sub new_password_submit {
             body    => $mail,
             );
     }
+    else {
+        my $mail = $self->render_to_string(template => 'auth/no_user_email',
+                                           layout => undef)->to_string;
+        DIKUrevy::Email->send_mail(
+            to      => $v->output->{email_address},
+            subject => "Nyt løsen til dikurevy.dk",
+            body    => $mail,
+            );
+    }
 
-    # Show this message even if the email address is invalid, to defend against
-    # targeted data extraction.
     $self->show_message('Vi har sendt dig instruktioner til at lave et nyt løsen.',
                         flash => 1);
     return $self->redirect_to('frontpage');
