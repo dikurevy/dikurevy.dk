@@ -1,0 +1,10 @@
+requires 'Crypt::PBKDF2';
+requires 'Email::Stuffer';
+requires 'Encode';
+requires 'HTML::FormatText';
+requires 'Mojo::Base';
+requires 'Mojo::JWT';
+requires 'Mojo::Template';
+requires 'Mojo::Util';
+requires 'Mojolicious::Commands';
+requires 'Try::Tiny';
