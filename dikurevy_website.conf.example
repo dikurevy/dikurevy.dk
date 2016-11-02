@@ -6,4 +6,6 @@ use Mojo::SQLite;
     secrets => [ 'flofwlrl42ytl53lgfwldflcffwqrkqeldq' ],
     # Account where mail is sent to. Make it your own mail in development, and 'boss@dikurevy.dk' in production.
     admin_mail => 'boss@dikurevy.dk',
+    # Det hemmelige løsen der giver adgang til SSH på dikurevyens server.
+    hemmeligt_løsen => 'NotTelling',
 };

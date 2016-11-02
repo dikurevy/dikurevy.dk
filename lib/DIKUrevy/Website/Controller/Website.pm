@@ -12,6 +12,13 @@ sub posters { return shift->render('website/posters'); }
 sub join_us { return shift->render('website/join_us'); }
 sub contact { return shift->render('website/contact'); }
 sub harlem  { return shift->render('website/harlem');  }
+sub git     {
+    my $self = shift;
+
+    $self->stash( hemmeligt_løsen => $self->config('hemmeligt_løsen') );
+
+    return $self->render('website/git');
+}
 
 sub phone_dir {
     my $self = shift;

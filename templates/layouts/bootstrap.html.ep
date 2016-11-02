@@ -71,6 +71,7 @@
                             % if ($user->admin) {
                             <li><a href="<%= url_for('admin_index') %>">Admin</a></li>
                             % }
+                            <li><a href="<%= url_for('git') %>">Revykartotek</a></li>
                         </ul>
                     </li>
                     <li><a href="<%= url_for('logout') %>">Log ud</a></li>

@@ -1,0 +1,131 @@
+% title 'Revykartotek';
+<h1><%= title %></h1>
+
+<p>Dette dokument er en guide til</p>
+
+<ul>
+  <li>
+    hvordan man skriver sketches og sange i SaTyR-revyernes RevyTeX-format, og
+  </li>
+  <li>
+    hvordan man uploader manuskripterne til sine sketches, sange og videoer.
+  </li>
+</ul>
+
+<h2>Arbejdsgange</h2>
+
+<p>
+  Når man har udviklet en idé til en sketch, sang eller video, sender man den ud
+  på materialelisten, dvs. <code>materiale@dikurevy.dk</code>.  Der kan alle
+  revytter se idéen, og så kan vi tale videre om den til næste revymøde.  Hvis
+  det ender med at blive til mere end bare en idé, og man gerne vil se det
+  opført, så skal man lægge sin sketch, sang eller video op i
+  <em>revykartoteket</em>, så det kan blive udvalgt til revyen.
+</p>
+
+<p>
+  Revykartoteket er en <em>git</em>-mappe på DIKUrevyens server.  For at få sit
+  materiale op i kataloget, skal man sørge for at det er i RevyTeX-formatet og
+  at man har revyens git-repo.  Spørg en medrevyt for hjælp!  Hvis det går helt
+  galt, kan nogen andre gøre det for dig.
+</p>
+
+
+<h2>RevyTeX</h2>
+
+<p>
+  RevyTeX er det LaTeX-modul der bliver brugt af SaTyR-revyerne til deres
+  materiale.
+</p>
+
+<p>
+  RevyTeX stammer fra 90'erne og vedligeholdes nu på
+  <a href="https://github.com/dikurevy/RevyTeX">github.com/dikurevy/RevyTeX</a>.
+  Det er en fin blanding af TeX og Perl.
+</p>
+
+<p>
+  I DIKUrevyens revykartotek er der en mappe for hvert studieår.  Hver årsmappe
+  har undermapperne <code>sange</code>, <code>sketches</code>
+  og <code>video</code>.  Man placerer sit TeXede nummer i den passende mappe.
+  I hver undermappe ligger der en fil <code>skabelon.tex</code> som viser
+  hvordan man kommer i gang med RevyTeX-formatet.
+</p>
+
+
+<h2>Git</h2>
+
+<p>
+  DIKUrevyen bruger kildekodekontrolsystemet <em>git</em> til at holde styr på
+  vores materiale og dets ændringer.  Selve revykartoteket er et git-repo som
+  revyen kører på sin egen server.
+</p>
+
+<p>
+  For at hente git-repoet skal du sørge for at
+  have <a href="http://git-scm.com/">git</a> installeret.  Kør så i en terminal
+</p>
+
+<pre>
+git clone dikurevy@dikurevy.dk:DIKUrevy.git
+cd DIKUrevy
+git submodule update --init
+</pre>
+
+<p>
+  Det <strong>hemmelige</strong> løsen er <code><%= $hemmeligt_løsen %></code>.
+</p>
+
+<p>
+  For at uploade dit materiale skal du gå ind i mappen med årstallet for den
+  kommende DIKUrevy og lægge dit materiale i den passende undermappe, altså
+  enten <code>sange</code>, <code>sketches</code> eller <code>video</code>.  Kør
+  så noget i retning af
+</p>
+
+<pre>
+git add sketches/trump-prutter.tex
+git commit -m '+ vildt nice sketch!!!'
+git pull --rebase # Sørg for at du har den nyeste udgave af arkivet.
+git push
+</pre>
+
+<p>
+  for at tilføje dit materiale og lægge det op på revyserveren.
+</p>
+
+<p>
+  Hvis du senere ændrer i din <code>.tex</code>-fil, skal du også fortælle det
+  til git, uanset om ændringen er lille eller stor.  Kør noget i retning af
+</p>
+
+<pre>
+git add sketches/trump-prutter.tex
+git commit -m 'Jeg har forbedret pruttebeskrivelsen.'
+git pull --rebase
+git push
+</pre>
+
+<p>
+  Hvis du er i tvivl om hvorvidt du har tilføjet eller committet din ændring,
+  kan du køre <code>git status</code> og <code>git log</code>.  Det er en rigtig
+  god idé at lære git ordentligt, for du kan godt løbe ind i mere komplicerede
+  git-situationer.
+</p>
+
+<p>
+  Dette git-repo ligger på vores egen server fordi vi holder vores
+  materiale hemmeligt indtil efter revyen.  Efter revyen lægger nogen^{TM}
+  så alt det opførte materiale op på vores offentlige arkiv på
+  <a href="https://github.com/dikurevy/Public-Archive">github.com/dikurevy/Public-Archive</a>.
+  Der kan sagtens ligge uopført materiale i git-repoet, for materialeudvælgelsen
+  sker <em>efter</em> alle revytter har haft rig mulighed for at lægge alt
+  muligt op i revykartoteket.
+</p>
+
+<h3>Git og Windows</h3>
+
+<p>
+  Git virker på Windows, men revyens git gør ikke rigtig, for vi bruger
+  symlinks.
+</p>
