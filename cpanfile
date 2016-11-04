@@ -5,4 +5,5 @@ requires 'HTML::FormatText';
 requires 'Mojolicious';
 requires 'Mojolicious::Plugin::Authentication';
 requires 'Mojo::JWT';
+requires 'Mojo::SQLite';
 requires 'Try::Tiny';
