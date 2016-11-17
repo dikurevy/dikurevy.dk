@@ -33,6 +33,8 @@ sub login_submit {
         return $self->login();
     }
 
+    # Remember me lasts for 6 months
+    $self->session(expiration => 6*30*24*60*60) if $self->param('remember_me');
 
     return $self->redirect_to('frontpage');
 }

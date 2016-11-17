@@ -12,6 +12,13 @@
         %= password_field password => (class => 'form-control', placeholder => 'Løsen')
     % end
 
+    %= form_group 'remember_me' => begin
+        <label>
+            %= check_box 'remember_me'
+            Husk mit login
+        </label>
+    % end
+
     <button type="submit" class="btn btn-primary">Log ind</button>
 % end
 
