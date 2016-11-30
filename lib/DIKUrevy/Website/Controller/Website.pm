@@ -32,7 +32,9 @@ sub harlem_submit {
     my $self = shift;
 
     my $v = $self->validation;
-    $v->required($_) for qw/full_name card_no end_date reason/;
+    $v->required($_) for qw/full_name reason/;
+    $v->required('card_no')->like(qr/^\d{2}-\d{2}-\d{6}$/);
+    $v->required('end_date')->like(qr/^\d{4}-\d{2}-\d{2}$/);
     $v->required('email')->like(qr/^.*\@.*$/);
 
     if ($v->has_error || $v->csrf_protect->has_error('csrf_token')) {
