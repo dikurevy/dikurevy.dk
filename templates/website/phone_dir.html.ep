@@ -1,22 +1,24 @@
 % title 'Telefonbog';
 <h1><%= title %></h1>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Navn</th>
-            <th>Kaldenavn</th>
-            <th>E-mail</th>
-            <th>Telefonnummer</th>
-        </tr>
-    </thead>
-    <tbody>
-        % for my $user (@$users) {
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td><%= $user->realname %></td>
-                <td><%= $user->username %></td>
-                <td><%= $user->email %></td>
-                <td><%= $user->phone %></td>
+                <th>Navn</th>
+                <th>Kaldenavn</th>
+                <th>E-mail</th>
+                <th>Telefonnummer</th>
             </tr>
-        % }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            % for my $user (@$users) {
+                <tr>
+                    <td><%= $user->realname %></td>
+                    <td><%= $user->username %></td>
+                    <td><%= $user->email %></td>
+                    <td><%= $user->phone %></td>
+                </tr>
+            % }
+        </tbody>
+    </table>
+</div>
