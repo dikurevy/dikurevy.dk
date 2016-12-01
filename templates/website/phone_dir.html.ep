@@ -15,8 +15,12 @@
                 <tr>
                     <td><%= $user->realname %></td>
                     <td><%= $user->username %></td>
-                    <td><%= $user->email %></td>
-                    <td><%= $user->phone %></td>
+                    <td>
+                        %= link_to $user->email, "mailto:".$user->email
+                    </td>
+                    <td>
+                        %= link_to $user->phone, "tel:".$user->phone
+                    </td>
                 </tr>
             % }
         </tbody>
