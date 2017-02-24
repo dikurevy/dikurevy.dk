@@ -12,9 +12,9 @@
     % end
     %= form_group email => begin
         <label for="email">E-mail:</label>
-        %= text_field email => (class => 'form-control', placeholder => 'E-mail')
+        %= email_field email => (class => 'form-control', placeholder => 'E-mail')
     % end
     %= form_group phone => begin
         <label for="phone">Telefon:</label>
-        %= text_field phone => (class => 'form-control', placeholder => 'Telefon')
+        %= tel_field phone => (class => 'form-control', placeholder => 'Telefon')
     % end
