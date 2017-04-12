@@ -1,3 +1,12 @@
 <p>Din konto på DIKUrevy.dk er hermed blevet bekræftet!</p>
 
+<p>
+    En brugerkonto giver dig bl.a. adgang til:
+    <ul>
+        <li><a href="http://møder.dikurevy.dk">Mødekalenderen</a></li>
+        <li><%= link_to "Revy-telefonbogen", url_for('phone_dir')->to_abs %></li>
+        <li><%= link_to "Vores interne revy-git", url_for('git')->to_abs %></li>
+    </ul>
+</p>
+
 <p>Hilsen bossgruppen</p>
