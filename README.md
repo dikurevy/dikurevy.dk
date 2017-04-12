@@ -6,7 +6,7 @@ For at køre siden i udvikling:
 
     # Installér afhængigheder
     sudo cpan -i App::cpanminus
-    sudo cpanm -installdeps .
+    sudo cpanm --installdeps .
 
     # Tilpas konfigurationsfilen
     cp dikurevy_website.conf.example dikurevy_website.conf
