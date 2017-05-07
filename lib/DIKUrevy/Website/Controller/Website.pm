@@ -4,8 +4,27 @@ use utf8;
 
 use DIKUrevy::Email;
 use DIKUrevy::User;
+use DIKUrevy::Meets;
 
-sub index   { return shift->render('website/index');   }
+use Try::Tiny;
+
+sub index {
+    my $self = shift;
+
+    my @meetings;
+    try {
+        my $meets = DIKUrevy::Meets->load_from_dir( $self->config('meets_directory') . '/data' );
+        my @upcoming_meetings = $meets->upcoming_meetings;
+        @meetings = @upcoming_meetings[0..4];
+    } catch { };
+
+    $self->stash(
+        meetings => \@meetings,
+    );
+
+    return $self->render('website/index');
+}
+
 sub tickets { return shift->render('website/tickets'); }
 sub media   { return shift->render('website/media');   }
 sub posters { return shift->render('website/posters'); }

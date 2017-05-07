@@ -1,9 +1,34 @@
-%#<div class="jumbotron">
-%#    <div class="container">
-%#    </div>
-%#</div>
+% my $user = current_user;
 <div class="row">
-	<div class="col-md-8">
+    <div class="col-md-3">
+        <p>
+        <img class="img-responsive center-block" src="/img/logo.svg" alt="DIKUrevy">
+        </p>
+
+
+        <h2>Information</h2>
+        <p>
+            Næste revy er d. 26.-27. maj 2017. Følg med på Facebook for løbende information om billetsalg.
+        </p>
+
+        % if (@$meetings) {
+        <h2>Næste <%= scalar @$meetings %> møder</h2>
+        % unless ($user) {
+            <p>NB: Det kræver at du er logget ind før du kan tilmelde dig et møde.</p>
+        % }
+        <div class="list-group">
+            % for my $meeting (@$meetings) {
+                %= link_to $meeting->url => (class => 'list-group-item') => begin
+                    %= $meeting->short_date
+                    &ndash;
+                    %= $meeting->title
+                    <span class="badge"><%= scalar @{$meeting->attendees} %></span>
+                % end
+            % }
+        </div>
+        % }
+    </div>
+	<div class="col-md-6">
         <h2>DIKUrevy</h2>
         <p>DIKUrevy er en studenterdreven revy skabt af studerende på Datalogisk Institut ved Københavns Universitet. DIKUrevyen afholdes hvert år den sidste lørdag i maj måned. Revyen er skrevet og opført af studerende og har været afholdt årligt siden 1973 og er dermed en af de ældste studenterdrevne revyer i Danmark.</p>
 		<p>
@@ -24,16 +49,7 @@
             <a href="http://satyr.dk/">satyr.dk</a>.
 		</p>
 	</div>
-	<div class="col-md-4">
-        <p>
-        <img class="img-responsive center-block" src="/img/logo.svg" alt="DIKUrevy">
-        </p>
-
-
-        <h2>Information</h2>
-        <p>
-            Næste revy er d. 26.-27. maj 2017. Følg med på Facebook for løbende information om billetsalg.
-        </p>
+	<div class="col-md-3">
         <p>
 			<div id="fb-root"></div>
 			<script>(function(d, s, id) {
