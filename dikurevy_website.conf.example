@@ -8,4 +8,6 @@ use Mojo::SQLite;
     admin_mail => 'boss@dikurevy.dk',
     # Det hemmelige løsen der giver adgang til SSH på dikurevyens server.
     hemmeligt_løsen => 'NotTelling',
+    # Hvor ligger DIKUrevy Meets?
+    meets_directory => '/home/sebbe/Dropbox/Studie/Miscellaneous/Revy/DIKU/DIKUrevyMeets',
 };
