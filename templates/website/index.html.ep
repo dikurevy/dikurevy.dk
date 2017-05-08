@@ -83,6 +83,12 @@
             url  => 'https://www.nine.dk',
             desc => 'Tak til vores sponsor <a href="https://www.nine.dk">Nine</a>. Nine er et højt specialiseret konsulenthus med mere end 75 ansatte med fokus på udvikling af digitale selvbetjeningsløsninger.',
         },
+        {
+            name => 'COWI',
+            logo => 'cowi-logo.png',
+            url  => 'http://www.cowi.dk/gis',
+            desc => 'Tak til vores sponsor <a href="http://www.cowi.dk/gis">COWI</a>. COWI kombinerer rådgivning inden for ingeniørkunst, miljø og samfundsøkonomi med data og digitalisering i smarte it-løsninger.',
+        },
     );
 %>
     % for my $sponsor (@sponsors) {
