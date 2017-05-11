@@ -15,7 +15,9 @@ sub index {
     try {
         my $meets = DIKUrevy::Meets->load_from_dir( $self->config('meets_directory') . '/data' );
         my @upcoming_meetings = $meets->upcoming_meetings;
-        @meetings = @upcoming_meetings[0..4];
+        if (@upcoming_meetings) {
+            @meetings = @upcoming_meetings[0..4];
+        }
     } catch { };
 
     $self->stash(
