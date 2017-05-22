@@ -62,7 +62,7 @@
         {
             name => 'Alpha Solutions',
             logo => 'AlphaSolutionsLogoLille.png',
-            url  => 'http://www.alpha-solutions.dk/',
+            url  => 'http://www.alpha-solutions.dk/career#AlphaSolutions',
             desc => 'Tak til vores sponsor Alpha Solutions. Interesseret i et job? <a href="http://www.alpha-solutions.dk/career#AlphaSolutions">Klik her!</a>',
         },
         {
