@@ -65,12 +65,6 @@
             url  => 'http://www.alpha-solutions.dk/career#AlphaSolutions',
             desc => 'Tak til vores sponsor Alpha Solutions. Interesseret i et job? <a href="http://www.alpha-solutions.dk/career#AlphaSolutions">Klik her!</a>',
         },
-        {
-            name => 'IT-Minds',
-            logo => 'logoitminds.png',
-            url  => 'https://www.it-minds.dk',
-            desc => 'Tak til vores sponsor <a href="http://www.it-minds.dk/#job/it_minds_som_arbejdsplads">IT Minds</a> – en arbejdsplads med studerende i fokus.',
-        },
     );
 %>
     % for my $sponsor (@sponsors) {
