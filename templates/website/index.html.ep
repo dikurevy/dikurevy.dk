@@ -18,6 +18,7 @@
         % }
         <div class="list-group">
             % for my $meeting (@$meetings) {
+                % next unless $meeting;
                 %= link_to $meeting->url => (class => 'list-group-item') => begin
                     %= $meeting->short_date
                     &ndash;
