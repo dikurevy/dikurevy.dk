@@ -8,6 +8,10 @@
 <%
     my @years = (
         {
+            year => '2017',
+            posters => [qw( plakat_007.jpg )],
+        },
+        {
             year => '2016',
             posters => [qw( dramatik-plakat-alt.jpg  git-plakat.jpg  tux-plakat-alt.jpg  vim-plakat.jpg )],
         },
