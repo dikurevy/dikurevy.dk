@@ -5,5 +5,23 @@
     %= csrf_field
     %= include 'auth/user_fields'
 
+    %= form_group mailinglist => begin
+        <label for="mailinglist">Jeg vil gerne med på disse mailinglister:</label>
+
+        <div class="checkbox">
+            <label>
+                %= check_box mailinglist => 'revy'
+                Revylisten (<a href="mailto:revy@dikurevy.dk">revy@dikurevy.dk</a>) - Officielle annonceringer og generel revysnak.
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label>
+                %= check_box mailinglist => 'materiale'
+                Materialelisten (<a href="mailto:materiale@dikurevy.dk">materiale@dikurevy.dk</a>) - Diskussion af sketch-, sang- og videoidéer.
+            </label>
+        </div>
+    % end
+
     <button type="submit" class="btn btn-primary">Opret bruger</button>
 % end

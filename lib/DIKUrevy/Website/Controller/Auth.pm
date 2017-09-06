@@ -86,7 +86,15 @@ sub create_user_submit {
     $user->set_password($self->param('password'));
     $user->save;
 
-    my $mail = $self->render_to_string(template => 'auth/mail_created', user => $user, layout => undef)->to_string;
+    my $mailing_lists = $self->every_param('mailinglist');
+
+    my $mail = $self->render_to_string(
+        template      => 'auth/mail_created',
+        user          => $user,
+        mailing_lists => $mailing_lists,
+        layout        => undef,
+    )->to_string;
+
     DIKUrevy::Email->send_mail(
         to      => $self->config('admin_mail'),
         subject => 'Ny bruger oprettet på websiden: ' . $user->username,

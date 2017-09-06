@@ -2,10 +2,14 @@
 <p>En bruger har lige oprettet sig på websiden:</p>
 
 <ul>
-% for my $f (qw/id username email realname phone verified admin/) {
+% for my $f (qw/id username email realname phone/) {
     <li><%= $f %>: <%= $user->$f %></li>
 % }
 </ul>
+
+% if (@$mailing_lists) {
+<p>Brugeren vil gerne på følgende mailinglister: <b><%= join(', ', @$mailing_lists) %></b></p>
+% }
 
 % my $admin_url = url_for('admin_user_list')->to_abs;
 <p>For at bekræfte brugeren, gå ind på <a href="<%= $admin_url %>"><%= $admin_url %></a>.</p>
