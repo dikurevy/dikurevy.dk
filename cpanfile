@@ -1,3 +1,4 @@
+requires 'utf8::all';
 requires 'Crypt::PBKDF2';
 requires 'Email::Stuffer';
 requires 'Encode';
