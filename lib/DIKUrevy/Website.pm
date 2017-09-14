@@ -88,6 +88,9 @@ sub startup {
     $r->get('/harlem')->to('website#harlem')->name('harlem');
     $r->post('/harlem')->to('website#harlem_submit')->name('harlem_submit');
 
+    # Redirects
+    $r->get('/introdag' => sub { return shift->redirect_to('https://www.facebook.com/events/1347504975375816/') });
+
     # Login/logout pages
     $r->get('/log-ind')->to('auth#login')->name('login');
     $r->post('/log-ind')->to('auth#login_submit')->name('login_submit');
