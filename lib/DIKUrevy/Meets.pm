@@ -5,7 +5,7 @@ use utf8::all;
 use DIKUrevy::Meets::Meeting;
 
 use Mojo::File;
-use Mojo::JSON qw/from_json/;
+use JSON qw/from_json/;
 
 =head1 NAME
 
