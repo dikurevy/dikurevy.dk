@@ -33,6 +33,21 @@ sub startup {
         return $self->tag('div', class => join(' ', @classes), @_);
     });
 
+    # Is the current date <= the given date?
+    $self->helper(date_is_before => sub {
+        my $self = shift;
+        my ($byear, $bmonth, $bday) = @_;
+
+        my ($sec, $min, $hour, $mday, $mon, $year) = localtime(time);
+        $year += 1900;
+        $mon += 1; # 0-indexed...
+
+        return $year < $byear || $year == $byear && (
+            $mon < $bmonth || $mon == $bmonth && $mday <= $bday
+        );
+
+    });
+
     $self->plugin(authentication => {
         autoload_user => 1,
         load_user     => sub {
