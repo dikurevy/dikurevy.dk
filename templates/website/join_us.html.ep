@@ -8,9 +8,118 @@ især vigtigt at vi er en masse i maj hvor revyen løber af stablen.
 </p>
 
 <p>
-Vi holder flere revy-arrangementer i løbet af året. Hvis du vil være med, er du mere end velkommen!
+Vi holder flere revy-arrangementer i løbet af året. Hvis du vil være med,
+er du mere end velkommen! Hvis du gerne vil følge med, så meld dig til <a href="https://www.facebook.com/groups/504972063180929/">
+vores sociale Facebook-gruppe</a>, kig i <a href="http://møder.dikurevy.dk">vores mødekalender</a>,
+og skriv til <strong>boss@dikurevy.dk</strong> at du gerne vil tilmeldes vores mailinglister
 </p>
 
+% if (date_is_before(2018, 3, 24)) {
+<h2>Rolletilmelding</h2>
+<p>Indtil den <strong>24. marts</strong> er det muligt at tilmelde sig årets revy.</p>
+
+<p>Følgende info-mail er blevet sendt ud på revy-mailinglisten i den forbindelse:</p>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <strong>[VIGTIGT] Tilmelding til DIKUrevy 2018 - deadline 24. marts</strong>
+    </div>
+    <div class="panel-body">
+<p>Kære revytter - nye som gamle!</p>
+
+<p>Materialedeadlinen nærmer sig med hastige skridt. Det betyder, at vi skal til at finde ud af hvem der gerne vil være med i årets revy! (Hurra!) Om du skal på scenen, vi i TeXnikken, vil bygge rekvisitter, vil lave fest, eller noget helt femte, så er denne mail en du bør læse.</p>
+
+<p>Denne mail er lang, men vigtig! Tag dig derfor tiden til at læse den - den indeholder megen vigtig information!</p>
+
+<h3>Mødetidspunkter</h3>
+
+<p>På http://møder.dikurevy.dk kan I se en liste over årets øvedage:</p>
+
+<table class="table table-striped">
+<tr><td>Fredag</td><td>18/5</td><td><a href="http://møder.dikurevy.dk/?meeting=2018-05-18">Øveweekend dag 0</a></td></tr>
+<tr><td>Lørdag</td><td>19/5</td><td><a href="http://møder.dikurevy.dk/?meeting=2018-05-19">Øveweekend dag 1</a></td></tr>
+<tr><td>Søndag</td><td>20/5</td><td><a href="http://møder.dikurevy.dk/?meeting=2018-05-20">Øveweekend dag 2</a></td></tr>
+<tr><td>Mandag</td><td>21/5</td><td><a href="http://møder.dikurevy.dk/?meeting=2018-05-21">Øveweekend dag 3</a></td></tr>
+<tr><td>Lørdag</td><td>26/5</td><td><a href="http://møder.dikurevy.dk/?meeting=2018-05-26">Øvedag 0</a></td></tr>
+<tr><td>Søndag</td><td>27/5</td><td><a href="http://møder.dikurevy.dk/?meeting=2018-05-27">Øvedag 1</a></td></tr>
+<tr><td>Mandag</td><td>28/5</td><td><a href="http://møder.dikurevy.dk/?meeting=2018-05-28">Øvedag 2</a></td></tr>
+<tr><td>Tirsdag</td><td>29/5</td><td><a href="http://møder.dikurevy.dk/?meeting=2018-05-29">Øvedag 3</a></td></tr>
+<tr><td>Onsdag</td><td>30/5</td><td><a href="http://møder.dikurevy.dk/?meeting=2018-05-30">Oberstprøve</a></td></tr>
+<tr><td>Torsdag</td><td>31/5</td><td><a href="http://møder.dikurevy.dk/?meeting=2018-05-31">Generalprøve</a></td></tr>
+<tr><td>Fredag</td><td>1/6</td><td><a href="http://møder.dikurevy.dk/?meeting=2018-06-01">Fredagsforestilling</a></td></tr>
+<tr><td>Lørdag</td><td>2/6</td><td><a href="http://møder.dikurevy.dk/?meeting=2018-06-02">Lørdagsforestilling</a></td></tr>
+<tr><td>Søndag</td><td>3/6</td><td><a href="http://møder.dikurevy.dk/?meeting=2018-06-03">Oprydning</a></td></tr>
+</table>
+
+<p>Alle disse aktiviteter er obligatoriske hvis man skal på scenen, er band eller er instruktør. TeXnikken får lov til at springe øveweekenden over.</p>
+
+<p>Roller vil blive prioriteret til folk der har mulighed for at deltage hele tiden, men skriv alligevel til os hvis du gerne vil være med, men af en eller anden grund ikke har mulighed for at være der hele tiden, så finder vi ud af hvad der kan lade sig gøre :)</p>
+
+<p>Der vil være fællesspisning, med egenbetaling, hver dag som man kan tilmelde sig gennem mødekalenderen. Du kan med fordel tilmelde dig allerede nu, så du ikke glemmer det.</p>
+
+<p>Vi har desuden også en hyttetur der ligger fra den 13. - 15. april: <a href="http://møder.dikurevy.dk/?meeting=2018-04-13">1. hyttetur</a>. Turen er ikke obligatorisk, men den er <strong>varmt</strong> anbefalet for alle der skal være med til revyen, lige gyldigt hvad man vil lave.</p>
+
+<h3>Hvad vil du gerne lave?</h3>
+
+<p>For at få et overblik over hvad folk godt kunne tænke sig at lave i revyen, så har vi lavet en lille formular man kan udfylde: <a href="https://docs.google.com/forms/d/e/1FAIpQLScEDmARYXg3S1Nf0emdEVWQTPjWS1W4NqNVQcbncMJXXqIdzw/viewform?usp=sf_link">https://docs.google.com/forms/d/e/1FAIpQLScEDmARYXg3S1Nf0emdEVWQTPjWS1W4NqNVQcbncMJXXqIdzw/viewform?usp=sf_link</a></p>
+
+<p>Formularen viser, at du er interesseret i at hjælpe til med de givne punkter, så selv hvis du ikke kan alle dage; så skriv dig bare på, så finder vi noget du kan lave.</p>
+
+<h3>Rolletilmelding - kik her hvis du gerne vil på scenen!</h3>
+
+Hvis du ikke vil på scenen, så kan du springe denne sektion over.
+
+Hvis du gerne vil på scenen, så skal vi bruge en rolletilmelding fra dig. Det foregår ved, at du sender en mail til <a href="mailto:boss@dikurevy.dk">boss@dikurevy.dk</a> med følgende information:
+
+<blockquote>
+<p><strong>Navn:</strong></p>
+
+<p><strong>Hvor lang tid har du gået på DIKU:</strong></p>
+
+<p><strong>Har du tidligere erfaring, enten fra andre revyer, eller med sang/skuespil:</strong><br/>
+Erfaring er ikke nødvendig, men det er rart for os at vide hvis du har det.</p>
+
+<p><strong>Hvilke slags roller ønsker du:</strong><br/>
+Kan fx. inkludere:
+<ul>
+<li>om du kun vil have sang, sketch, danse eller statist-roller. (Eller en blanding.)</li>
+<li>om du gerne vil have mange roller, eller få.</li>
+<li>hvor store roller du gerne vil have.</li></ul></p>
+
+<p>
+<strong>Har du læst materialet, og har nogle specielle ønsker?</strong><br/>
+Det indsendte materiale kan findes i kompileret udgave på <a href="http://dikurevy.dk/materiale/">http://dikurevy.dk/materiale</a>. (Brugernavn/password kan fås inde på <a href="https://www.facebook.com/groups/504972063180929/">Facebook-gruppen</a>)<br/>
+Hvis der er en sketch/sang du gerne vil (eller ikke vil) være med i, kan du nævne det her.</p>
+
+<p><strong>Er der nogle af de ovenstående dage du ikke kan deltage?</strong><br/>
+Som nævnt ovenfor, så forventes det som udgangspunkt, at du kan alle dage fra 18/5-21/5 (øveweekenden) og 26/5-3/6 (revyugen).</p>
+</blockquote>
+
+<p>
+Når man har sendt ovenstående til <a href="mailto:boss@dikurevy.dk">boss@dikurevy.dk</a>, så svarer en af bosserne med en bekræftelse. Alle der tilmelder sig er automatisk med i revyen, og vi vil prøve at finde nogle roller der passer til dine ønsker.</p>
+
+<p>
+Hvis du gerne vil have en sangrolle, så skal du også til forsyngning hos en af vores sanginstruktører. Formålet med dette er, at finde en sang der passer til din stemme og erfaring. De sender en mail ud omkring dette snarest muligt.</p>
+
+<p>Deadlinen for tilmelding er d. 24. marts 2018 kl 23:59. Vi har tænkt os at lave akt- og rollefordeling allerede dagen efter, så det går ikke at komme en dag for sent. :)</p>
+
+<p>Hvis man ikke har fået en bekræftelse på sin tilmelding inden deadlinen, så skriv en mail til <a href="boss@dikurevy.dk">boss@dikurevy.dk</a>.</p>
+
+<h3>Wrap-up</h3>
+
+<p>Det burde gerne være den vigtigeste information. Vi har dog sikkert glemt noget, så hvis du har nogle spørgsmål, så hold dig ikke tilbage. Du kan enten svare på denne mailtråd, eller skrive privat til bosslisten - <a href="mailto:boss@dikurevy.dk">boss@dikurevy.dk</a>. Så skal vi nok gøre vores bedste for at svare på dit spørgsmål.</p>
+
+<p>
+--<br/>
+Hilsen<br/>
+DIKUrevyens bossgruppe<br/>
+Kasper, Sebastian og Simon<br/>
+</p>
+    </div>
+</div>
+
+
+% } else {
 <p>
 Her er en kort oversigt over hvilke arbejdsopgaver der er i løbet af året og under revyen:
 </p>
@@ -38,3 +147,4 @@ Kom og leg med!
 Vi er også på
 GitHub: <a href="https://github.com/dikurevy">https://github.com/dikurevy</a>.
 </p>
+% }

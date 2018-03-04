@@ -1,4 +1,15 @@
 % my $user = current_user;
+% if (date_is_before(2018, 3, 24)) {
+<div class="jumbotron">
+    <h1>Tilmelding til 2018-revyen</h1>
+    <p>Tilmeldingen til årets revy er nu i gang. Til og med d. 24. marts er det muligt at melde dig
+    til at lave årets revy.
+    Vi kræver ingen erfaring for at man kan være med, blot at man har lyst til at være med til at
+    lave <nobr>den bedste DIKUrevy <em>nogensinde</em>!</nobr></p>
+    <p><%= link_to "Meld dig til" => url_for('join_us'), class => 'btn btn-primary btn-lg' %></p>
+</div>
+% }
+
 <div class="row">
     <div class="col-md-3">
         <p>
