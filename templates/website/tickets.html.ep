@@ -1,24 +1,24 @@
 % title 'Billetsalg';
 <h1><%= title() %></h1>
 
-% if (date_is_before(2017, 5, 27)) {
-<p>Så er det tid igen til årets DIKUrevy! For første gang i mange år holder DIKUrevyen to forestillinger:</p>
+% if (date_is_before(2018, 6, 2)) {
+<p>Så er det tid igen til årets DIKUrevy! I år holder DIKUrevyen to forestillinger:</p>
 <ul>
-    <li>Premiereforestillingen, fredag d. 26. maj - <a href="https://www.facebook.com/events/1196886400440658/">Facebook-event</a> - <a href="https://billetto.dk/events/192904">Billetto</a></li>
-    <li>Lørdagsforestillingen, lørdag d. 27. maj - <a href="https://www.facebook.com/events/1371225856321103">Facebook-event</a> - <a href="https://billetto.dk/events/192921">Billetto</a></li>
+    <li>Premiereforestillingen, fredag d. 1. juni - <a href="https://www.facebook.com/events/2072172989706768/">Facebook-event</a></li>
+    <li>Lørdagsforestillingen, lørdag d. 2. juni - <a href="https://www.facebook.com/events/1371225856321103/">Facebook-event</a></li>
 </ul>
 
 <p>Dørene til foyeren åbner kl. 19:00, hvor der vil være mulighed for at købe læskende forfriskninger. Selve revyen starter vanen tro kl 19:30.</p>
 
 <p>Caféen? holder efterfest direkte efter revyen, hvor revytterne gerne vil feste max med jer! Så kom glad!</p>
 
-<p>Billetsalget starter mandag d. 8. maj i DIKUs kantine kl 12. Herefter vil billetsalget fortsætte rundt omkring Nørre Campus. Detaljer herom vil blive meldt ud på vores <a href="http://facebook.com/dikurevy">Facebook-side</a>, og i Facebook-events'ne.
-Fra d. 10. maj vil det også være muligt at købe billetter på Caféen? fra kl 13:00 hver dag.</p>
+<p>Billetsalget starter tirsdag d. 8. maj kl 17 med en fremvisning af sidste års revy på Caféen? (<a href="https://www.facebook.com/events/384506368682337/">Facebook-event</a>).</p>
 
-<p>Billetterne koster, som altid, 75 kr stykket, og det vil kun være muligt at købe to (2) ad gangen. Vil man have flere, må man stille sig bagom i køen.
-I frokostpausen tager vi imod kontanter og mobilepay, mens det på Caféen? også vil være muligt at betale med Dankort.</p>
+<p>Herefter vil billetsalget fortsætte rundt omkring Nørre Campus. Detaljer herom vil blive meldt ud på vores <a href="http://facebook.com/dikurevy">Facebook-side</a>, og i Facebook-events'ne.</p>
 
-<p>Sidst men ikke mindst har vi også billetter til salg på billetto. Disse vil blive gjort tilgængelig kl 12:00 d. 8. maj.</p>
+<p>Billetterne koster, som altid, 75 kr stykket, og det vil kun være muligt at købe 4 ad gangen. Vil man have flere, må man stille sig bagom i køen. Betaling foregår udelukkende via MobilePay.</p>
+
+<p>Sidst men ikke mindst har vi også billetter til salg på nettet. Disse vil blive gjort tilgængelige kl 17:00 d. 8. maj.</p>
 % } else {
 <p>Information om billetsalg kommer op noget tid før revyen.</p>
 % }
