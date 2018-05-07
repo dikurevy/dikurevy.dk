@@ -9,6 +9,13 @@
     <p><%= link_to "Meld dig til" => url_for('join_us'), class => 'btn btn-primary btn-lg' %></p>
 </div>
 % }
+% if (date_is_before(2018, 6, 2)) {
+<div class="jumbotron">
+    <h1>Køb billet!</h1>
+    <p>Billetsalget til årets revy er nu i gang. Skynd dig ind og få en billet i dag!</p>
+    <p><%= link_to "Køb billet" => url_for('tickets'), class => 'btn btn-primary btn-lg' %></p>
+</div>
+% }
 
 <div class="row">
     <div class="col-md-3">
