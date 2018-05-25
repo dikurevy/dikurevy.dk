@@ -75,13 +75,43 @@
             name => 'COWI',
             logo => 'cowi-logo.png',
             url  => 'http://www.cowi.dk/gis',
-            desc => 'Tak til vores sponsor <a href="http://www.cowi.dk/gis">COWI</a>. COWI kombinerer rådgivning inden for ingeniørkunst, miljø og samfundsøkonomi med data og digitalisering i smarte it-løsninger.',
+            desc => 'Tak til vores sponsor <a href="http://www.cowi.dk">COWI</a>. COWI kombinerer rådgivning inden for ingeniørkunst, miljø og samfundsøkonomi med data og digitalisering i smarte it-løsninger.',
         },
         {
             name => 'Alpha Solutions',
             logo => 'AlphaSolutionsLogoLille.png',
             url  => 'http://www.alpha-solutions.dk/career#AlphaSolutions',
             desc => 'Tak til vores sponsor Alpha Solutions. Interesseret i et job? <a href="http://www.alpha-solutions.dk/career#AlphaSolutions">Klik her!</a>',
+        },
+        {
+            name => 'Computerworld',
+            logo => 'computerworld.png',
+            url  => 'https://www.computerworld.dk/',
+            desc => 'Tak til vores sponsor Computerworld.',
+        },
+        {
+            name => 'SupWiz',
+            logo => 'supwiz.png',
+            url  => 'https://www.supwiz.com/',
+            desc => 'Tak til vores sponsor SupWiz.',
+        },
+        {
+            name => 'Netcompany',
+            logo => 'netcompany.png',
+            url  => 'https://www.netcompany.com/',
+            desc => 'Tak til vores sponsor Netcompany.',
+        },
+        {
+            name => 'PROSA',
+            logo => 'prosa.png',
+            url  => 'https://www.prosa.dk/',
+            desc => 'Tak til vores sponsor PROSA.',
+        },
+        {
+            name => 'IT Minds',
+            logo => 'logoitminds.png',
+            url  => 'https://www.it-minds.dk/',
+            desc => 'Tak til vores sponsor IT Minds.',
         },
     );
 %>
