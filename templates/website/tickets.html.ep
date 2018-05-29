@@ -19,6 +19,9 @@
 <p>Billetterne koster, som altid, 75 kr stykket, og det vil kun være muligt at købe 4 ad gangen. Vil man have flere, må man stille sig bagom i køen. Betaling foregår udelukkende via MobilePay.</p>
 
 <p>Sidst men ikke mindst har vi også billetter til salg på nettet. Disse vil blive gjort tilgængelige kl 17:00 d. 8. maj.</p>
+
+<p>Showet foregår i auditoriet Store UP1 i Universitetsparken 1, 2100 København Ø. Indgang foregår igennem glasdørene vist nedenfor.</p>
+<iframe src="https://www.google.com/maps/embed?pb=!4v1527553422595!6m8!1m7!1sH4jX3_LwjBPD0uziHnBWZQ!2m2!1d55.70150213556263!2d12.56110629103153!3f10.978416687817003!4f5.8796692850791885!5f0.7820865974627469" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 % } else {
 <p>Information om billetsalg kommer op noget tid før revyen.</p>
 % }
