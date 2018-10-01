@@ -10,7 +10,7 @@ DIKUrevyen fører forskellige mailinglister, her kan du læse hvilken adresse du
             name  => 'Bosslisten',
             text  => <<EOF
     Bedes kontaktes for adminstrative formål, økonomi mv. Hvis du gerne vil være med i revyen (og skrives på en eller følgende lister) mv.<br>
-    Revybosser er: Kasper Elbo, Sebastian Paaske Tørholm, Simon Skjerning Linneberg, Nathalia Krøigaard Jørgensen (bossføl).
+    Revybosser er: Bjørn Møller, Kasper Elbo, Nathalia Krøigaard Jørgensen, Sean Christian Lindholm.
 EOF
         },
         {
