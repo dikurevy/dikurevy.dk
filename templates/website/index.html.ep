@@ -26,7 +26,7 @@
 
         <h2>Information</h2>
         <p>
-            Næste revy er d. 1.-2. juni 2018. Følg med på Facebook og websiden for løbende information om billetsalg.
+            Næste revy er d. 24.-25. maj 2019. Følg med på Facebook og websiden for løbende information om billetsalg.
         </p>
 
         % if (@$meetings) {
