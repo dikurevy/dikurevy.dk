@@ -10,4 +10,6 @@ use Mojo::SQLite;
     hemmeligt_løsen => 'NotTelling',
     # Hvor ligger DIKUrevy Meets?
     meets_directory => '/home/sebbe/Dropbox/Studie/Miscellaneous/Revy/DIKU/DIKUrevyMeets',
+    # Which user/group should the webserver run as?
+    server_user_group => { user => 'www-data', group => 'www-data' },
 };

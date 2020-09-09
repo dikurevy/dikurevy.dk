@@ -13,8 +13,17 @@ sub startup {
     $DIKUrevy::DB::db = $self->config('db');
     $self->helper(db => sub { return $DIKUrevy::DB::db });
 
-    # Allow access to cookie from møder.dikurevy.dk
-    $self->sessions->cookie_domain('.dikurevy.dk') if $self->mode eq 'production';
+    if ($self->mode eq 'production') {
+        # Allow access to cookie from møder.dikurevy.dk
+        $self->sessions->cookie_domain('.dikurevy.dk');
+
+        # If specified; drop privileges on webservers down to the given
+        # user/group after initial launch
+        my $user_group = $self->config('server_user_group');
+        if ($user_group) {
+            $self->plugin('SetUserGroup', $user_group);
+        }
+    }
 
     for my $type (qw(message error)) {
         $self->helper("show_$type" => sub {

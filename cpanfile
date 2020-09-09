@@ -6,6 +6,7 @@ requires 'JSON';
 requires 'HTML::FormatText';
 requires 'Mojolicious';
 requires 'Mojolicious::Plugin::Authentication';
+requires 'Mojolicious::Plugin::SetUserGroup';
 requires 'Mojo::JWT';
 requires 'Mojo::SQLite';
 requires 'Try::Tiny';
